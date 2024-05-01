@@ -29,11 +29,11 @@ for column in kc.columns:
 
 
 # Function to classify mushroom as edible or poisonous
-def classify(user_selection):
+def classify(user_input):
     try:
         # Separate features and target variable
-        X = user_selection.drop(['class'], axis=1)
-        Y = user_selection["class"]
+        X = user_input.drop(['class'], axis=1)
+        Y = user_input['class']
 
         # Split data into train and test sets
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=40, test_size=.5, train_size=.5)
