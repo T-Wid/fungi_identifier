@@ -16,7 +16,7 @@ This project is meant to be a web application that could be used by the public. 
 <h2> Topic </h2>
 
 <p>
-Using machine learning algorithms, the program is intended to idenfity mushrooms and classify them as toxic or not. The characteristics of the mushrooms are the determining factor.
+Using machine learning algorithms, the program is intended to identify mushrooms and classify them as toxic or not. The characteristics of the mushrooms are the determining factor.
 </p>
 
 
@@ -30,6 +30,8 @@ The dataset used by this program is courtesy of the University of California Irv
 <h2> Directions </h2>
 
 <p>
-The final application will be hosted at:
-</p>
+Copy and paste the following command: `pip install pandas scikit-learn Flask seaborn` Next, download the Python program from its source, which might be hosted on platforms like GitHub. After downloading, navigate to the directory where the program is located using the terminal or command prompt. You can use the `cd` command followed by the path to the program's directory. With the terminal or command prompt in the program's directory, you can run the Flask application by executing the `app.py` file. To do so, type: `python app.py` Once the Flask app is running, it will start the development server, and you'll see output indicating that the server is running, along with the localhost URL and port number where the app is hosted.
+
+ 	To interact with the Flask application, open a web browser and navigate to the specified localhost URL and port number. Usually, this URL is `http://127.0.0.1:5000/` or `http://localhost:5000/`, where `5000` is the default port number used by Flask. 
+ </p>
 
