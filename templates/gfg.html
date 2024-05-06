@@ -1,32 +1,31 @@
 {% extends 'base.html' %}
-
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
-{% endblock %}
-
+{% endblock styles %}
 {% block content %}
+
 <nav>
-  <h1>Fung-Identifier</h1>
+  <h1>Fung-I-dentifier</h1>
 </nav>
 <div class="form-wrapper">
   <div class="guide">
     <ol>
-      <h2>Directions</h2>
-      <li>Modify the form however necessary.</li>
-      <li>Use the "classify" button.</li>
-      <li>Return to previous page to repeat with a different test.</li>
-      <li>Data Visualizations below:</li>
+      <h2>User Guide</h2>
+      <li>Choose attributes from the drop-down menu</li>
+      <li>Press "Predict Class"</li>
+      <li>Use the back button on your browser to return after a test</li>
+      <li>Check out the visualizations at the bottom of the page</li>
     </ol>
     <ul>
-      <h2>Example Attribute Combinations:</h2>
-      <li><strong>Gill-Color:</strong> Purple</li>
-      <li><strong>Population: </strong> Solitary</li>
-      <li><strong>Spore-Print-Color:</strong> Black</li>
-      <li><strong>Bruises:</strong> True</li>
-      <li><strong>Stalk-Root:</strong> Bulbous</li>
+      <h2>Example :</h2>
+      <li><strong>Gill-Color:</strong> Buff</li>
+      <li><strong>Population: </strong> Several</li>
+      <li><strong>Spore-Print-Color:</strong> White</li>
+      <li><strong>Bruises:</strong> False</li>
+      <li><strong>Stalk-Root:</strong> Missing</li>
     </ul>
   </div>
-  <form class="form" action="{{ url_for('gfg') }}" method="post">
+<form class="form" action="{{ url_for("gfg") }}" method="post">
     <p>Gill-Color</p>
     <select id="gill-color" name="gc">
       <option value="0">Buff</option>
@@ -42,16 +41,8 @@
       <option value="10">White</option>
       <option value="11">Yellow</option>
     </select>
-    <p>Population</p>
-    <select id="population" name="pop"> 
-      <option value="0">Abundant</option>
-      <option value="1">Clustered</option>
-      <option value="2">Numerous</option>
-      <option value="3">Scattered</option>
-      <option value="4" selected>Several</option>
-      <option value="5">Solitary</option>
-    </select>
-    <p>Spore-Print-Color</p>
+
+   <p>Spore-Print-Color</p>
     <select id="spore-print-color" name="spc">
       <option value="0">Buff</option>
       <option value="1">Chocolate</option>
@@ -63,6 +54,19 @@
       <option value="7" selected>White</option>
       <option value="8">Yellow</option>
     </select>
+
+    <p>Population</p>
+    <select id="population" name="pop">
+      <option value="0">Abundant</option>
+      <option value="1">Clustered</option>
+      <option value="2">Numerous</option>
+      <option value="3">Scattered</option>
+      <option value="4" selected>Several</option>
+      <option value="5">Solitary</option>
+    </select>
+
+
+
     <p>Bruises</p>
     <select id="bruises" name="bs">
       <option value="0">False</option>
@@ -76,32 +80,35 @@
       <option value="3">Equal</option>
       <option value="4">Rooted</option>
     </select>
-    <button type="submit" class="btn">CLASSIFICATION:</button>
+    <button type="submit" class="btn">Predict Class</button>
   </form>
 </div>
 
+
 <div class="img-wrapper">
-  <h2>Data Visualization</h2>
-  <img src="static/img/evp.png" alt="Explained Variance Percentage">
-  <h3>Importance of each characteristic to classification in the format of a heat map.</h3>
-  <img src="static/img/hm.png" alt="Heat Map">
-  <h3>
-    The violin plot compares attributes of all characteristics across different classes.
-    <br> 
-    Green is non-toxic, red is toxic.
+  <h2>Explore the data below &#8595;</h2>
+  <img src="static/img/evp.png" alt="">
+  <h3>Discover the significance of each characteristic through a heatmap for classification</h3>
+  <img src="static/img/hm.png" alt="">
+  <h3>Compare all characteristics and their attributes by class using a violin plot.
     <br>
-    The numerical values align with the sequence of options within the form attributes.
+    Toxic specimens are highlighted in red, while non-toxic ones are depicted in green.
+    <br>
+    The numeric values correspond to the order of the options in the form.
   </h3>
-  <img src="static/img/vp.png" alt="Violin Plot">
-  <h3>Gill Color</h3>
-  <img src="static/img/gc.png" alt="Gill Color">
-  <h3>Population</h3>
-  <img src="static/img/pop.png" alt="Population">
-  <h3>Spore Print Color</h3>
-  <img src="static/img/spc.png" alt="Spore Print Color">
-  <h3>Bruising</h3>
-  <img src="static/img/br.png" alt="Bruising">
-  <h3>Stalk Root</h3>
-  <img src="static/img/sr.png" alt="Stalk Root">
 </div>
-{% endblock %}
+  <img src="static/img/vp.png" alt="">
+  <h3>Gill Color</h3>
+  <img src="static/img/gc.png" alt="">
+  <h3>Population</h3>
+  <img src="static/img/pop.png" alt="">
+  <h3>Spore Print Color</h3>
+  <img src="static/img/spc.png" alt="">
+  <h3>Bruising</h3>
+  <img src="static/img/br.png" alt="">
+  <h3>Stalk Root</h3>
+  <img src="static/img/sr.png" alt="">
+
+</div>
+
+{% endblock content %}

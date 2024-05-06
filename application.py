@@ -6,17 +6,21 @@ application = Flask(__name__)
 
 @application.route('/', methods=['GET', 'POST'])
 def gfg():
-    if request.method == "POST":
-        gill_color = int(request.form.get("gill_color"))
-        population = int(request.form.get("population"))
-        spore_color = int(request.form.get("spore_color"))
-        bruises = int(request.form.get("bruises"))
-        stalk_root = int(request.form.get("stalkRoot"))
-
-        user_selection = main(gill_color, population, spore_color, bruises, stalk_root)
-        message = classify(user_selection)
+    if request.method == 'POST':
+        gc = request.form.get("gc")
+        pop = request.form.get("pop")
+        spc = request.form.get("spc")
+        bs = request.form.get("bs")
+        sr = request.form.get("sr")
+        gillColor = int(gc)
+        population = int(pop)
+        sporePrintColor = int(spc)
+        bruises = int(bs)
+        stalkRoot = int(sr)
+        userSelection = main(gillColor, population,
+                             sporePrintColor, bruises, stalkRoot)
+        message = classify(userSelection)
         return message
-
     return render_template("gfg.html")
 
 
